@@ -22,7 +22,7 @@ docker run \
   -v $(pwd):$(pwd) \
   -w $(pwd) \
   --network=host \
-  --user $USER_ID:$GROUP_ID \
+  --user $(id -u $(whoami)):$(id -g $(whoami)) \
   pyramid-hello \
   python app.py
 ```
